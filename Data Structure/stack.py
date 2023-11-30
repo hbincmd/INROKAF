@@ -1,7 +1,10 @@
 class ListStack:
     def __init__(self):
         self.data = list()
-
+    
+    def __len__(self):
+        return len(self.data)
+    
     def push(self, value):
         self.data.append(value)
 
@@ -16,3 +19,4 @@ stack.push(4)
 print(stack.data)
 print(stack.pop())
 print(stack.pop())
+print(len(stack))

@@ -23,6 +23,7 @@
 데이터를 살펴보는 기초적인 단계는 각 피처의 대푯값을 구하는 것이다.
 
 - 평균(mean) : 모든 값의 총합을 개수로 나눈 값
+$$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
 - 가중평균(weighted mean) : 가중치를 곱한 값의 총합을 가중치의 총합으로 나눈 값
 - 중간값(median) : 데이터에서 가장 가운데 위치한 값
 - 백분위수(percentile) : 전체 데이터의 P%를 아래에 두는 값(분위수)
@@ -56,3 +57,18 @@ print(np.average(state['Murder.Rate'], weights=state['Population']))
 print(wq.median(state['Murder.Rate'], weights=state['Population']))
 
 ```
+
+
+#### 변이 추정
+변이는 데이터 값이 얼마나 밀집해 있는지 혹은 퍼져 있는지 나타내는 산포도를 나타낸다.
+
+- 편차(deviation) : 관측값과 위치 추정값 사이의 차이
+- 분산(variance) : 평균과 편차를 제곱한 값들의 합을 n-1로 나눈 값, n은 데이터 개수
+- 표준편차(standard deviation) : 분산의 제곱근
+- 평균절대편차(mean absolute deviation) : 평균과의 편차의 절댓값의 평균
+- 중간값의 중위절대편차(MAD) : 중간값과의 편차의 절댓값의 중간값
+- 범위(range) : 데이터의 최댓값과 최솟값의 차이
+- 순서통계량(order statistics) : 최소에서 최대까지 정렬된 데이터 값에 따른 계량형
+- 백분위수(percentile) : 어떤 값들의 P퍼센트가 이 값 혹은 더 작은 값을 갖고, (100-P)퍼센트가 이 값 혹은 더 큰 값을 갖도록 하는 값
+- 사분위범위(IQR) : 75번째 백분위수와 25번째 백분위수 사이의 차이
+
